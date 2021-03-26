@@ -1,14 +1,62 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
-
+import reddit from "./api/redditapi";
 export default function Home() {
-  const handleClick = () => {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon/ditto")
-      .then((data) => console.log(data.data))
-      .catch((err) => console.error(err));
+  let resultBody = [];
+
+  const handleClickAndSetResults = (e) => {
+    const sortBy = "latest";
+    const searchLimit = 30;
+    const searchTerm = "space65";
+    const subreddit = "mechmarket";
+
+    reddit
+      .search(searchTerm, searchLimit, sortBy, subreddit)
+      .then((results) => {
+        results.map((result, index) => {
+          const {
+            author,
+            link_flair_text,
+            permalink,
+            subreddit_name_prefixed,
+            title,
+          } = result;
+          resultBody.push({
+            author,
+            link_flair_text,
+            permalink,
+            subreddit_name_prefixed,
+            title,
+          });
+        });
+      });
+    console.log("this is Resultbody: ", resultBody);
+    e.preventDefault();
   };
+
+  const renderResultBody = () => (
+    <ul>
+      {resultBody.map((result, index) => {
+        const {
+          author,
+          link_flair_text,
+          permalink,
+          subreddit_name_prefixed,
+          title,
+        } = result;
+        return (
+          <div>
+            <p>{`Title: ${title}`}</p>
+            <p>{`Author: ${author}`}</p>
+            <p>{`Status: ${link_flair_text}`}</p>
+            <p>{`subreddit: ${subreddit_name_prefixed}`}</p>
+            <p>{`Link: ${titled}`}</p>
+          </div>
+        );
+      })}
+    </ul>
+  );
   return (
     <div className={styles.container}>
       <Head>
@@ -41,7 +89,7 @@ export default function Home() {
               aria-describedby="search-addon"
               id={styles.inputBar}
             />
-            <button onClick={handleClick} type="submit">
+            <button onClick={(e) => handleClickAndSetResults(e)} type="submit">
               Search
             </button>
             <span className="input-group-text border-0" id="search-addon">
@@ -74,6 +122,7 @@ export default function Home() {
             <p>Text Placeholder 4</p>
           </a>
         </div>
+        {renderResultBody && <div>{renderResultBody()}</div>}
       </main>
 
       <footer className={styles.footer}>
