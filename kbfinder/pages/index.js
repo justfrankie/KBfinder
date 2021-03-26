@@ -1,7 +1,14 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import axios from "axios";
 
 export default function Home() {
+  const handleClick = () => {
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon/ditto")
+      .then((data) => console.log(data.data))
+      .catch((err) => console.error(err));
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -34,6 +41,9 @@ export default function Home() {
               aria-describedby="search-addon"
               id={styles.inputBar}
             />
+            <button onClick={handleClick} type="submit">
+              Search
+            </button>
             <span className="input-group-text border-0" id="search-addon">
               <i className="fas fa-search"></i>
             </span>
