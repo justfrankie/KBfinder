@@ -17,16 +17,3 @@ const req = http.request(
     });
   }
 );
-
-// export default (req, res) => {
-//   res.status(200).json({ name: 'John Doe' })
-// }
-
-// export default function handler(req, res) {
-//   if (req.method === "GET") {
-//     console.log("WORKEDDDDDDDDDDDDDDDDDDDDDDDD")
-//     res.status(200).json({"GOT SOMETHING BACK"})
-//   } else {
-//     res.status(400).json("NOPEEEEEEEEEEEEEEEEEEEEEEEEEE")
-//   }
-// }
