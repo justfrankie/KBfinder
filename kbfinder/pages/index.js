@@ -41,7 +41,7 @@ export default function Home() {
         const {
           author,
           link_flair_text,
-          permalink,
+          // permalink,
           subreddit_name_prefixed,
           title,
         } = result;
