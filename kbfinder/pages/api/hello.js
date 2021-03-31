@@ -3,7 +3,7 @@
 // const morgan = require("morgan");
 // const cors = require("cors");
 // const path = require("path");
-// // const db = require("./database.js");
+
 global.Buffer = global.Buffer || require("buffer").Buffer;
 
 if (typeof btoa === "undefined") {
