@@ -51,7 +51,7 @@ export default function Home() {
             <p>{`Author: ${author}`}</p>
             <p>{`Status: ${link_flair_text}`}</p>
             <p>{`subreddit: ${subreddit_name_prefixed}`}</p>
-            <p>{`Link: ${titled}`}</p>
+            <p>{`Perma-link: ${titled}`}</p>
           </div>
         );
       })}
