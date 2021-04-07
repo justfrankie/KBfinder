@@ -80,7 +80,7 @@ export default function Home() {
           <p className={styles.code}>
             A tool used to find average pricing for keycaps from /r/mechmarket
           </p>
-          <div className="input-group rounded">
+          <div className={`input-group rounded ${styles.inputContainer}`}>
             <input
               type="search"
               className="form-control rounded inputBar"
@@ -89,7 +89,11 @@ export default function Home() {
               aria-describedby="search-addon"
               id={styles.inputBar}
             />
-            <button onClick={(e) => handleClickAndSetResults(e)} type="submit">
+            <button
+              className={styles.searchButton}
+              onClick={(e) => handleClickAndSetResults(e)}
+              type="submit"
+            >
               Search
             </button>
             <span className="input-group-text border-0" id="search-addon">

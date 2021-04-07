@@ -62,6 +62,12 @@ s .main {
   font-size: 1.5rem;
 }
 
+.searchButton {
+  border: none;
+  background-color: rgb(86, 172, 243);
+  color: white;
+}
+
 .code {
   background: #fafafa;
   border-radius: 5px;
@@ -75,10 +81,13 @@ s .main {
   margin: 0 auto;
   width: 50%;
 }
-.inputBar {
-  width: 60%;
-  height: 2rem;
-  color: #0070f3;
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+}
+#inputBar {
+  max-width: 83%;
   margin: 0 auto;
 }
 
