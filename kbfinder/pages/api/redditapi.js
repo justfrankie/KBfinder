@@ -1,8 +1,8 @@
 export default {
   search: function (searchTerm, searchLimit, sortBy, subreddit) {
-    console.log(searchTerm);
     return fetch(
-      `http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}&subreddit=${subreddit}`
+      `https://www.reddit.com/r/videos/search.json?q=dog&restrict_sr=on&include_over_18=on&sort=relevance&t=all`
+      // `http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}&subreddit=${subreddit}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -11,3 +11,5 @@ export default {
       .catch((err) => console.log(err));
   },
 };
+
+// https://www.reddit.com/search.json?q=space65&sort=latest&limit=30&subreddit=mechmarket
