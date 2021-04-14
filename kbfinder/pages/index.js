@@ -39,7 +39,7 @@ export default function Home() {
         } else {
           console.log("waiting on results");
         }
-        console.log("this is all data:", allData);
+        // console.log("this is all data:", allData);
       })
       .catch((err) => console.error(err));
   };
