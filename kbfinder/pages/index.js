@@ -12,10 +12,10 @@ export default function Home() {
   }, [allData]);
 
   const handleClickAndSetResults = () => {
-    const sortBy = "latest";
-    const searchLimit = 30;
-    const searchTerm = "space65";
-    const subreddit = "mechmarket";
+    // const sortBy = "latest";
+    // const searchLimit = 30;
+    // const searchTerm = "space65";
+    // const subreddit = "mechmarket";
     reddit
       .search(searchTerm, searchLimit, sortBy, subreddit)
       .then((results) => {
@@ -37,7 +37,7 @@ export default function Home() {
             });
           });
         } else {
-          console.error("error returning data")
+          console.error("error returning data");
         }
         // console.log("this is all data:", allData);
       })
