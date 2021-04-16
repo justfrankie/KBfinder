@@ -37,7 +37,7 @@ export default function Home() {
             });
           });
         } else {
-          console.log("waiting on results");
+          console.error("error returning data")
         }
         // console.log("this is all data:", allData);
       })
