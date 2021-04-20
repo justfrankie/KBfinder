@@ -4,7 +4,7 @@
 // const cors = require("cors");
 // const path = require("path");
 
-global.Buffer = global.Buffer || require("buffer").Buffer;
+// global.Buffer = global.Buffer || require("buffer").Buffer;
 
 if (typeof btoa === "undefined") {
   global.btoa = function (str) {
